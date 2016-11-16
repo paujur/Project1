@@ -68,7 +68,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="ADD">
-                                    <color key="titleColor" red="1" green="0.24236639616665612" blue="0.37375389404712756" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="0.13587473701023867" blue="0.28245102543876932" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="addNewListButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6d5-zf-1af"/>
@@ -94,7 +94,7 @@
                                     <rect key="frame" x="35" y="6" width="81" height="21"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" red="0.98431372549999996" green="0.2470588235" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textColor" red="0.98431372549999996" green="0.10708897770161944" blue="0.20874146917870326" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
@@ -169,7 +169,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="ADD">
-                                    <color key="titleColor" red="1" green="0.24236639616665612" blue="0.37375389404712756" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="0.13587473701023867" blue="0.28245102543876932" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="addNewTaskButtonTapped:" destination="UYb-20-5cC" eventType="touchUpInside" id="2Lv-Nk-Wx0"/>
@@ -202,7 +202,7 @@
                     <navigationItem key="navigationItem" id="yZa-ek-FBi">
                         <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="WlF-gr-feP">
-                            <color key="tintColor" red="0.98431372549019602" green="0.24705882352941178" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.98431372549999996" green="0.1070889777" blue="0.2087414692" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="saveListDetails:" destination="UYb-20-5cC" id="dzn-ey-wll"/>
                             </connections>
@@ -215,7 +215,7 @@
                                     <rect key="frame" x="53" y="6" width="44" height="21"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" red="0.98431372549999996" green="0.2470588235" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textColor" red="0.98431372549999996" green="0.1070889777" blue="0.2087414692" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
@@ -297,7 +297,7 @@
                     <navigationItem key="navigationItem" id="Vpc-MZ-iJt">
                         <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="Fp7-Ih-u5O">
-                            <color key="tintColor" red="0.98431372549019602" green="0.24705882352941178" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.98431372549999996" green="0.1070889777" blue="0.2087414692" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="saveTaskDetails:" destination="aCa-Fq-mRm" id="6ke-CD-b4i"/>
                             </connections>
@@ -310,7 +310,7 @@
                                     <rect key="frame" x="29" y="8" width="93" height="21"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" red="0.98431372549999996" green="0.2470588235" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textColor" red="0.98431372549999996" green="0.1070889777" blue="0.2087414692" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
