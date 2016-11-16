@@ -28,6 +28,8 @@ class ListOfListsViewController: UIViewController, UITableViewDataSource, UITabl
         newListNameTextField.text = ""
     }
     
+    
+    
    
     // MARK: UITableViewDataSource methods -----------------------
     
@@ -50,6 +52,8 @@ class ListOfListsViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let listCell = tableView.dequeueReusableCell(withIdentifier: "ListCell") as! ListOfListsTableViewCell
         listCell.listCellNameLabel.text = listOfListsArray[indexPath.row].name
+        // set cell background to clear
+        listCell.backgroundColor = UIColor.clear
         return listCell
     }
     
@@ -64,9 +68,11 @@ class ListOfListsViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     
-    
-    
     override func viewWillAppear(_ animated: Bool) {
+        // below gets rid of cells in table before they are created
+        listOfListsTableView.tableFooterView = UIView(frame: CGRect.zero)
+        // set the background of the table to clear
+        listOfListsTableView.backgroundColor = UIColor.clear
         listOfListsTableView.reloadData()
     }
     

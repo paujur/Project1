@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		043F3C231DDD1A560046B952 /* backgroundjpg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 043F3C221DDD1A560046B952 /* backgroundjpg.jpg */; };
 		046E79E51DDCDA9E0009D89F /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E79E41DDCDA9E0009D89F /* DetailsViewController.swift */; };
 		0483C5931DDCB08A00C1F6A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0483C5921DDCB08A00C1F6A9 /* AppDelegate.swift */; };
 		0483C5951DDCB08A00C1F6A9 /* ListOfListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0483C5941DDCB08A00C1F6A9 /* ListOfListsViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		043F3C221DDD1A560046B952 /* backgroundjpg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = backgroundjpg.jpg; path = Images/backgroundjpg.jpg; sourceTree = SOURCE_ROOT; };
 		046E79E41DDCDA9E0009D89F /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		0483C58F1DDCB08A00C1F6A9 /* TuDuV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuDuV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0483C5921DDCB08A00C1F6A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 		0483C5A41DDCB0AD00C1F6A9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				043F3C221DDD1A560046B952 /* backgroundjpg.jpg */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0483C59D1DDCB08A00C1F6A9 /* LaunchScreen.storyboard in Resources */,
+				043F3C231DDD1A560046B952 /* backgroundjpg.jpg in Resources */,
 				0483C59A1DDCB08A00C1F6A9 /* Assets.xcassets in Resources */,
 				0483C5981DDCB08A00C1F6A9 /* Main.storyboard in Resources */,
 			);
