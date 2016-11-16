@@ -47,8 +47,10 @@ class DetailsViewController: UIViewController {
             taskDetailDueDateTextField.text = task.dueDate
         }
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        // Transparent navigation bar
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
     }
 
     override func didReceiveMemoryWarning() {
