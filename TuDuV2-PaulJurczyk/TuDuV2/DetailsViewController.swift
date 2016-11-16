@@ -22,15 +22,15 @@ class DetailsViewController: UIViewController {
     var task: Task?
     
     // MARK: IBActions ---------------------------
-    
-    @IBAction func taskEditSaveButton(_ sender: UIButton) {
+  
+
+    @IBAction func saveTaskDetails(_ sender: Any) {
         task?.name = taskDetailNameTextField.text!
         task?.details = taskDetailDetailsTextView.text
         task?.dueDate = taskDetailDueDateTextField.text!
         navigationController!.popViewController(animated: true)
         
     }
-    
     
     
     

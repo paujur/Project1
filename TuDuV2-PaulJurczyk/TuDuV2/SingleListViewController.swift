@@ -25,9 +25,13 @@ class SingleListViewController: UIViewController, UITableViewDelegate, UITableVi
 
     // MARK: IBActions ---------------------------
     
-    @IBAction func changeListNameButtonClicked(_ sender: UIButton) {
-            list?.name = currentListNameTextField.text!
+    @IBAction func saveListDetails(_ sender: Any) {
+        list?.name = currentListNameTextField.text!
+        navigationController!.popViewController(animated: true)
     }
+    
+    
+
     
     
     @IBAction func addNewTaskButtonTapped(_ sender: UIButton) {
