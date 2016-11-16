@@ -72,6 +72,8 @@ class SingleListViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let taskCell = tableView.dequeueReusableCell(withIdentifier: "TaskCell") as! ListOfTasksTableViewCell
         taskCell.taskCellNameLabel.text = list?.listOfTasksArray[indexPath.row].name
+        // set cell background to clear
+        taskCell.backgroundColor = UIColor.clear
         return taskCell
     }
     
@@ -85,6 +87,11 @@ class SingleListViewController: UIViewController, UITableViewDelegate, UITableVi
     
     
     override func viewWillAppear(_ animated: Bool) {
+        // below gets rid of cells in table before they are created
+        listOfTasksTableView.tableFooterView = UIView(frame: CGRect.zero)
+        // set the background of the table to clear
+        listOfTasksTableView.backgroundColor = UIColor.clear
+
         currentListNameTextField.text = list?.name
         listOfTasksTableView.reloadData()
         super.viewWillAppear(animated)
