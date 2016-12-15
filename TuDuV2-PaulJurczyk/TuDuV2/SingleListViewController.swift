@@ -27,16 +27,13 @@ class SingleListViewController: UIViewController, UITableViewDelegate, UITableVi
     
     @IBAction func saveListDetails(_ sender: Any) {
         list?.name = currentListNameTextField.text!
+        Model.shared.persistListsToDefaults()
         navigationController!.popViewController(animated: true)
     }
     
     
-
-    
-    
     @IBAction func addNewTaskButtonTapped(_ sender: UIButton) {
         // below is to change the list name if user decides to change it
-        
     
         let newTaskName = newTaskNameTextField.text
         if newTaskName != "" { // make sure not to add a task with no name
@@ -45,6 +42,7 @@ class SingleListViewController: UIViewController, UITableViewDelegate, UITableVi
         }
         listOfTasksTableView.reloadData()
         newTaskNameTextField.text = ""
+        Model.shared.persistListsToDefaults()
     }
     
     // MARK: UITableViewDataSource methods -----------------------

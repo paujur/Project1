@@ -14,8 +14,8 @@ class DetailsViewController: UIViewController {
     
     @IBOutlet weak var taskDetailNameTextField: UITextField!
     
-    @IBOutlet weak var taskDetailDetailsTextView: UITextView!
 
+    @IBOutlet weak var taskDetailDetailsTextView: UITextView!
     @IBOutlet weak var taskDetailDueDateTextField: UITextField!
     
     // MARK: Local variable ---------------------------
@@ -28,8 +28,8 @@ class DetailsViewController: UIViewController {
         task?.name = taskDetailNameTextField.text!
         task?.details = taskDetailDetailsTextView.text
         task?.dueDate = taskDetailDueDateTextField.text!
+        Model.shared.persistListsToDefaults()
         navigationController!.popViewController(animated: true)
-        
     }
     
     

@@ -26,6 +26,7 @@ class ListOfListsViewController: UIViewController, UITableViewDataSource, UITabl
         // clear the list name textfield
         listOfListsTableView.reloadData()
         newListNameTextField.text = ""
+        Model.shared.persistListsToDefaults()
     }
     
     

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3mm-uf-8qQ">
-    <device id="ipad12_9" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3mm-uf-8qQ">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,28 +20,28 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundjpg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="5C5-ny-sgC">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7sm-eL-fab" userLabel="Table View Stack View">
-                                <rect key="frame" x="0.0" y="64" width="1024" height="956"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="467"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rXh-5a-mCg">
-                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="956"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="467"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ListCell" id="JsK-7L-Jvh" customClass="ListOfListsTableViewCell" customModule="TuDuV2" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="1024" height="100"/>
+                                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JsK-7L-Jvh" id="4ey-9R-SBf">
-                                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="99.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXn-0v-uPo">
-                                                            <rect key="frame" x="30" y="31" width="964" height="37"/>
+                                                            <rect key="frame" x="30" y="31" width="315" height="37"/>
                                                             <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="26"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -66,13 +66,13 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="h7n-Q9-ZDL" userLabel="Bottom 3 Stack View">
-                                <rect key="frame" x="0.0" y="1020" width="1024" height="346"/>
+                                <rect key="frame" x="0.0" y="531" width="375" height="136"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ibP-tb-xpn" userLabel="Label Stack View">
-                                        <rect key="frame" x="453.5" y="0.0" width="117" height="77"/>
+                                        <rect key="frame" x="129" y="0.0" width="117" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New List Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QmQ-uJ-8L6">
-                                                <rect key="frame" x="0.0" y="0.0" width="117" height="77"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="117" height="30"/>
                                                 <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -80,10 +80,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="axu-03-wpu" userLabel="Text Field Stack View">
-                                        <rect key="frame" x="44.5" y="77" width="935" height="96"/>
+                                        <rect key="frame" x="28.5" y="30" width="318" height="38"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zr4-vb-lZt">
-                                                <rect key="frame" x="0.0" y="0.0" width="935" height="96"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="318" height="38"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -94,10 +94,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="X77-VY-Ys1" userLabel="Add Button Stack View">
-                                        <rect key="frame" x="0.0" y="173" width="1024" height="173"/>
+                                        <rect key="frame" x="0.0" y="68" width="375" height="68"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wl-oh-jm8">
-                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="173"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="68"/>
                                                 <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="30"/>
                                                 <state key="normal" title="ADD">
                                                     <color key="titleColor" red="1" green="0.13587473701023867" blue="0.28245102543876932" alpha="1" colorSpace="calibratedRGB"/>
@@ -172,17 +172,17 @@
                         <viewControllerLayoutGuide type="bottom" id="6VB-xX-HVQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="mgL-T2-kAd">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundjpg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="otY-Pb-gjh">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="M7b-3g-l7c" userLabel="Full Stack">
-                                <rect key="frame" x="0.0" y="74" width="1024" height="1292"/>
+                                <rect key="frame" x="0.0" y="74" width="375" height="593"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="5xN-eG-e22" userLabel="Top Stack">
-                                        <rect key="frame" x="51.5" y="0.0" width="921" height="30"/>
+                                        <rect key="frame" x="18.5" y="0.0" width="338" height="30"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uYm-bH-2l8" userLabel="Top Label Stack">
                                                 <rect key="frame" x="0.0" y="0.0" width="32" height="30"/>
@@ -196,10 +196,10 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="79k-OD-AXN" userLabel="Top Text Stack">
-                                                <rect key="frame" x="45" y="0.0" width="876" height="30"/>
+                                                <rect key="frame" x="45" y="0.0" width="293" height="30"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jSS-6v-LG0">
-                                                        <rect key="frame" x="0.0" y="0.0" width="876" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="293" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -215,17 +215,17 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hqv-ma-Bfg" userLabel="Table Stack">
-                                        <rect key="frame" x="0.0" y="34" width="1024" height="956"/>
+                                        <rect key="frame" x="0.0" y="34" width="375" height="419"/>
                                         <subviews>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="23" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dju-B9-rq9">
-                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="956"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="419"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TaskCell" id="9iW-ry-ntQ" customClass="ListOfTasksTableViewCell" customModule="TuDuV2" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="23" width="1024" height="100"/>
+                                                        <rect key="frame" x="0.0" y="23" width="375" height="100"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9iW-ry-ntQ" id="KFD-Tg-Lfg">
-                                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="99.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ulp-XY-kp0">
@@ -250,13 +250,13 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bC9-lP-uX6" userLabel="Bottom Stack">
-                                        <rect key="frame" x="0.0" y="994" width="1024" height="298"/>
+                                        <rect key="frame" x="0.0" y="457" width="375" height="136"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BTJ-Rm-94h" userLabel="Label Stack">
-                                                <rect key="frame" x="476" y="0.0" width="72" height="66.5"/>
+                                                <rect key="frame" x="151.5" y="0.0" width="72" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3N-70-2XH">
-                                                        <rect key="frame" x="0.0" y="0.0" width="72" height="66.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="72" height="30"/>
                                                         <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -264,10 +264,10 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bBX-SH-nmm" userLabel="Text Field Stack">
-                                                <rect key="frame" x="51.5" y="66.5" width="921" height="82.5"/>
+                                                <rect key="frame" x="18.5" y="30" width="338" height="38"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DMe-xx-IzB">
-                                                        <rect key="frame" x="0.0" y="0.0" width="921" height="82.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="338" height="38"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -275,10 +275,10 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Rlx-lC-q1T" userLabel="Add Button Stack">
-                                                <rect key="frame" x="0.0" y="149" width="1024" height="149"/>
+                                                <rect key="frame" x="0.0" y="68" width="375" height="68"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YsV-5k-ZJr">
-                                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="149"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="68"/>
                                                         <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="30"/>
                                                         <state key="normal" title="ADD">
                                                             <color key="titleColor" red="1" green="0.13587473701023867" blue="0.28245102543876932" alpha="1" colorSpace="calibratedRGB"/>
@@ -326,7 +326,7 @@
                             </connections>
                         </barButtonItem>
                         <view key="titleView" contentMode="scaleToFill" id="5LZ-K0-sT0">
-                            <rect key="frame" x="112.5" y="5.5" width="150" height="33"/>
+                            <rect key="frame" x="113" y="6" width="150" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tasks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCS-jw-RIg">
@@ -359,17 +359,17 @@
                         <viewControllerLayoutGuide type="bottom" id="Kwj-pT-Cin"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Nmx-6v-c2z">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundjpg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="49X-3M-mgi">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="9gN-DW-rvr" userLabel="Full Stack">
-                                <rect key="frame" x="51" y="104" width="922" height="1112"/>
+                                <rect key="frame" x="19" y="104" width="337.5" height="413"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8T8-9G-KQW" userLabel="Top Stack">
-                                        <rect key="frame" x="0.0" y="0.0" width="922" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="337.5" height="30"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cb0-9w-nwS" userLabel="Top Label Stack">
                                                 <rect key="frame" x="0.0" y="0.0" width="37" height="30"/>
@@ -382,11 +382,11 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vun-ot-3FT" userLabel="Top Text Field Stack">
-                                                <rect key="frame" x="37" y="0.0" width="885" height="30"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vun-ot-3FT" userLabel="Top Text Field Stack">
+                                                <rect key="frame" x="37" y="0.0" width="300.5" height="30"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oUD-rj-lOn">
-                                                        <rect key="frame" x="0.0" y="0.0" width="885" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="300.5" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="12"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -396,7 +396,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SQh-pX-JX2" userLabel="Mid Stack">
-                                        <rect key="frame" x="0.0" y="465.5" width="308" height="181"/>
+                                        <rect key="frame" x="0.0" y="116" width="308" height="181"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="azK-sy-KW6" userLabel="Mid Label Stack">
                                                 <rect key="frame" x="0.0" y="0.0" width="58" height="24"/>
@@ -424,7 +424,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NWB-Jx-JPB" userLabel="Bottom Stack">
-                                        <rect key="frame" x="0.0" y="1082" width="922" height="30"/>
+                                        <rect key="frame" x="0.0" y="383" width="337.5" height="30"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8va-iF-KcI" userLabel="Bottom Label Stack">
                                                 <rect key="frame" x="0.0" y="0.0" width="75" height="30"/>
@@ -438,10 +438,10 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9Lm-Dh-tNX" userLabel="Bottom Text Field Stack">
-                                                <rect key="frame" x="85" y="0.0" width="837" height="30"/>
+                                                <rect key="frame" x="85" y="0.0" width="252.5" height="30"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Ca-8I-PVp">
-                                                        <rect key="frame" x="0.0" y="0.0" width="837" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="252.5" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="12"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -478,7 +478,7 @@
                             </connections>
                         </barButtonItem>
                         <view key="titleView" contentMode="scaleToFill" id="GuT-cC-LD8">
-                            <rect key="frame" x="437" y="5.5" width="150" height="33"/>
+                            <rect key="frame" x="113" y="6" width="150" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Task Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcV-mT-9sb">
@@ -492,7 +492,7 @@
                         </view>
                     </navigationItem>
                     <connections>
-                        <outlet property="taskDetailDetailsTextView" destination="AUV-of-upq" id="G70-Ba-lrp"/>
+                        <outlet property="taskDetailDetailsTextView" destination="AUV-of-upq" id="0nH-u6-lsk"/>
                         <outlet property="taskDetailDueDateTextField" destination="1Ca-8I-PVp" id="ETK-RR-wqc"/>
                         <outlet property="taskDetailNameTextField" destination="oUD-rj-lOn" id="n2U-76-TdZ"/>
                     </connections>
