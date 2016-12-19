@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Firebase
 class ListOfListsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     // MARK: IBOutlets -------------------------------
@@ -26,9 +26,18 @@ class ListOfListsViewController: UIViewController, UITableViewDataSource, UITabl
         // clear the list name textfield
         listOfListsTableView.reloadData()
         newListNameTextField.text = ""
+        // add it to Firebase
+        createListOfLists(name: newListName!)
     }
     
+    // MARK: Firebase: Create, Update, Delete
     
+    func createListOfLists(name: String){
+        let listOfListsRef = FIRDatabase.database().reference(withPath: "listOfLists")
+        let listOfLists = ListOfTasks(name: name)
+        let listOfListRef = listOfListsRef.child(name)
+        listOfListRef.setValue(listOfLists.toAnyObject())
+    }
     
    
     // MARK: UITableViewDataSource methods -----------------------

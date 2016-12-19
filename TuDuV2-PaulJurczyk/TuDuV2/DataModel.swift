@@ -25,6 +25,12 @@ class ListOfTasks {
     init(name: String) {
         self.name = name
     }
+    // this changes it to an object for Firebase to use
+    func toAnyObject() -> Any {
+        return [
+            "name": name
+        ]
+    }
 }
 
 class  Task {
@@ -36,5 +42,18 @@ class  Task {
         self.name = name
     }
     
-    // needs to hold task title, details, and due date -> all string format
+    func toAnyObject() -> Any {
+        return [
+            "name": name
+        ]
+    }
+
 }
+
+
+
+
+
+
+
+

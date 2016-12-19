@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SingleListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -45,7 +46,20 @@ class SingleListViewController: UIViewController, UITableViewDelegate, UITableVi
         }
         listOfTasksTableView.reloadData()
         newTaskNameTextField.text = ""
+        // add it to Firebase
+        createSingleList(name: newTaskName!)
     }
+    
+    
+    // MARK: Firebase: Create, Update, Delete
+    
+    func createSingleList(name: String){
+        let singleListRef = FIRDatabase.database().reference(withPath: "\(list!.name)/listOfTasks")
+        let singleList = Task(name: name)
+        let singleRef = singleListRef.child(name)
+        singleRef.setValue(singleList.toAnyObject())
+    }
+    
     
     // MARK: UITableViewDataSource methods -----------------------
     
