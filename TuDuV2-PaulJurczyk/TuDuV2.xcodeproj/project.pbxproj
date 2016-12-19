@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040D49451E085FA6009B1748 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 040D49441E085FA6009B1748 /* GoogleService-Info.plist */; };
 		043F3C231DDD1A560046B952 /* backgroundjpg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 043F3C221DDD1A560046B952 /* backgroundjpg.jpg */; };
 		046E79E51DDCDA9E0009D89F /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E79E41DDCDA9E0009D89F /* DetailsViewController.swift */; };
 		0483C5931DDCB08A00C1F6A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0483C5921DDCB08A00C1F6A9 /* AppDelegate.swift */; };
@@ -18,9 +19,11 @@
 		0483C5AC1DDCB37700C1F6A9 /* ListOfListsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0483C5AB1DDCB37700C1F6A9 /* ListOfListsTableViewCell.swift */; };
 		0483C5B01DDCBEA300C1F6A9 /* SingleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0483C5AF1DDCBEA300C1F6A9 /* SingleListViewController.swift */; };
 		0483C5B21DDCBFAF00C1F6A9 /* ListOfTasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0483C5B11DDCBFAF00C1F6A9 /* ListOfTasksTableViewCell.swift */; };
+		2712B0A04A9681393C5C9A48 /* libPods-TuDuV2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A465BB431FA4BB7C9FE2B24E /* libPods-TuDuV2.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		040D49441E085FA6009B1748 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		043F3C221DDD1A560046B952 /* backgroundjpg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = backgroundjpg.jpg; path = Images/backgroundjpg.jpg; sourceTree = SOURCE_ROOT; };
 		046E79E41DDCDA9E0009D89F /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		0483C58F1DDCB08A00C1F6A9 /* TuDuV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuDuV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,6 +37,9 @@
 		0483C5AB1DDCB37700C1F6A9 /* ListOfListsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfListsTableViewCell.swift; sourceTree = "<group>"; };
 		0483C5AF1DDCBEA300C1F6A9 /* SingleListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleListViewController.swift; sourceTree = "<group>"; };
 		0483C5B11DDCBFAF00C1F6A9 /* ListOfTasksTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfTasksTableViewCell.swift; sourceTree = "<group>"; };
+		409D68C7F323FA49258C3DF7 /* Pods-TuDuV2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TuDuV2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TuDuV2/Pods-TuDuV2.debug.xcconfig"; sourceTree = "<group>"; };
+		A465BB431FA4BB7C9FE2B24E /* libPods-TuDuV2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TuDuV2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7BFA3B2D6CDB8BFE26110CB /* Pods-TuDuV2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TuDuV2.release.xcconfig"; path = "Pods/Target Support Files/Pods-TuDuV2/Pods-TuDuV2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2712B0A04A9681393C5C9A48 /* libPods-TuDuV2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +59,8 @@
 			children = (
 				0483C5911DDCB08A00C1F6A9 /* TuDuV2 */,
 				0483C5901DDCB08A00C1F6A9 /* Products */,
+				770B0E1451581B8F9A6974CC /* Pods */,
+				35621F5B636B6D50DDA29866 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +82,7 @@
 				0483C5A41DDCB0AD00C1F6A9 /* Images */,
 				0483C5991DDCB08A00C1F6A9 /* Assets.xcassets */,
 				0483C59E1DDCB08A00C1F6A9 /* Info.plist */,
+				040D49441E085FA6009B1748 /* GoogleService-Info.plist */,
 			);
 			path = TuDuV2;
 			sourceTree = "<group>";
@@ -138,6 +148,23 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
+		35621F5B636B6D50DDA29866 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A465BB431FA4BB7C9FE2B24E /* libPods-TuDuV2.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		770B0E1451581B8F9A6974CC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				409D68C7F323FA49258C3DF7 /* Pods-TuDuV2.debug.xcconfig */,
+				E7BFA3B2D6CDB8BFE26110CB /* Pods-TuDuV2.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -145,9 +172,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0483C5A11DDCB08A00C1F6A9 /* Build configuration list for PBXNativeTarget "TuDuV2" */;
 			buildPhases = (
+				55324275506354F9B43FFBE5 /* [CP] Check Pods Manifest.lock */,
 				0483C58B1DDCB08A00C1F6A9 /* Sources */,
 				0483C58C1DDCB08A00C1F6A9 /* Frameworks */,
 				0483C58D1DDCB08A00C1F6A9 /* Resources */,
+				ABF509EBBA4CB337072590F3 /* [CP] Embed Pods Frameworks */,
+				D53E7CDF38740F4BE19417AF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -199,12 +229,61 @@
 			files = (
 				0483C59D1DDCB08A00C1F6A9 /* LaunchScreen.storyboard in Resources */,
 				043F3C231DDD1A560046B952 /* backgroundjpg.jpg in Resources */,
+				040D49451E085FA6009B1748 /* GoogleService-Info.plist in Resources */,
 				0483C59A1DDCB08A00C1F6A9 /* Assets.xcassets in Resources */,
 				0483C5981DDCB08A00C1F6A9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		55324275506354F9B43FFBE5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		ABF509EBBA4CB337072590F3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TuDuV2/Pods-TuDuV2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D53E7CDF38740F4BE19417AF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TuDuV2/Pods-TuDuV2-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0483C58B1DDCB08A00C1F6A9 /* Sources */ = {
@@ -336,6 +415,7 @@
 		};
 		0483C5A21DDCB08A00C1F6A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 409D68C7F323FA49258C3DF7 /* Pods-TuDuV2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TuDuV2/Info.plist;
@@ -348,6 +428,7 @@
 		};
 		0483C5A31DDCB08A00C1F6A9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7BFA3B2D6CDB8BFE26110CB /* Pods-TuDuV2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TuDuV2/Info.plist;
