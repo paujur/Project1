@@ -8,6 +8,7 @@
 
 
 import Foundation
+import Firebase
 
 // MARK: Global Variables ----------------------
 
@@ -22,6 +23,7 @@ var listOfListsArray = [ListOfTasks]()
 class ListOfTasks {
     var name: String
     var listOfTasksArray = [Task]()
+    var ref: FIRDatabaseReference?
     init(name: String) {
         self.name = name
     }
@@ -38,6 +40,7 @@ class  Task {
     var name: String
     var details = String()
     var dueDate = String()
+    var ref: FIRDatabaseReference?
     init(name: String) {
         self.name = name
     }

@@ -43,26 +43,38 @@ class SingleListViewController: UIViewController, UITableViewDelegate, UITableVi
         if newTaskName != "" { // make sure not to add a task with no name
             let newTask = Task(name: newTaskName!)
             list?.listOfTasksArray.append(newTask)
+            updateListOfLists(updatedName: (list?.name)!, taskName: newTaskName!, listOfTasks: list!)
         }
         listOfTasksTableView.reloadData()
         newTaskNameTextField.text = ""
-        // add it to Firebase
+      
         
-        
-        // this needs to be chagned
-        updateListOfLists(name: newTaskName!)
     }
     
     
     // MARK: Firebase: Create, Update, Delete
     // I think I need to update instead of create a new one
-    func updateListOfLists(name: String){
-        let singleListRef = FIRDatabase.database().reference(withPath: "\(list!.name)/listOfTasks")
-        let singleList = Task(name: name)
-        let singleRef = singleListRef.child(name)
-        singleRef.setValue(singleList.toAnyObject())
+    func updateListOfLists(updatedName: String, taskName: String, listOfTasks: ListOfTasks){
+        if listOfTasks.name == updatedName{
+            listOfTasks.ref?.updateChildValues([
+                "listOfTasksArray" : listOfListsArray.append(ListOfTasks(name: taskName)),
+                ])
+        } else {
+            listOfTasks.ref?.removeValue()
+            createListOfLists(name: updatedName)
+            listOfTasks.ref?.updateChildValues([
+                "listOfTasksArray" : listOfListsArray.append(ListOfTasks(name: taskName)),
+                ])
+
+        }
     }
     
+    func createListOfLists(name: String){
+        let listOfListsRef = FIRDatabase.database().reference(withPath: "listOfLists")
+        let listOfLists = ListOfTasks(name: name)
+        let listOfListRef = listOfListsRef.child(name)
+        listOfListRef.setValue(listOfLists.toAnyObject())
+    }
     
     // MARK: UITableViewDataSource methods -----------------------
     
