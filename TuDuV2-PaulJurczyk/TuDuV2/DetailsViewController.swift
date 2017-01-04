@@ -40,7 +40,7 @@ class DetailsViewController: UIViewController {
     
     
     func createDetails(details: String, dueDate: String){
-        let detailsRef = FIRDatabase.database().reference(withPath: "lists/list1/\(self.task!.name)")
+        let detailsRef = FIRDatabase.database().reference(withPath: "lists/" + "\(currentListName!)" + "/" + "\(self.task!.name)")
         let detailRef = detailsRef.child("details")
         let dueDateRef = detailsRef.child("dueDate")
         detailRef.setValue(details)

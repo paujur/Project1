@@ -12,7 +12,7 @@ import Foundation
 // MARK: Global Variables ----------------------
 
 var listOfListsArray = [ListOfTasks]()
-//var currentListName: String?
+var currentListName: String?
 //var currentTask: Task?
 //var currentList = [Task]()
 

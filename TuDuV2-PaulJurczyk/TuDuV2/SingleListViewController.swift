@@ -28,6 +28,7 @@ class SingleListViewController: UIViewController, UITableViewDelegate, UITableVi
     
     @IBAction func saveListDetails(_ sender: Any) {
         list?.name = currentListNameTextField.text!
+        
         navigationController!.popViewController(animated: true)
     }
     
@@ -36,9 +37,8 @@ class SingleListViewController: UIViewController, UITableViewDelegate, UITableVi
     
     
     @IBAction func addNewTaskButtonTapped(_ sender: UIButton) {
-        // below is to change the list name if user decides to change it
+        currentListName = currentListNameTextField.text!
         
-    
         let newTaskName = newTaskNameTextField.text
         if newTaskName != "" { // make sure not to add a task with no name
             let newTask = Task(name: newTaskName!)
