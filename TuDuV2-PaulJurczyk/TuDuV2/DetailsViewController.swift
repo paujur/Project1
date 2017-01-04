@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class DetailsViewController: UIViewController {
     
@@ -28,13 +29,22 @@ class DetailsViewController: UIViewController {
         task?.name = taskDetailNameTextField.text!
         task?.details = taskDetailDetailsTextView.text
         task?.dueDate = taskDetailDueDateTextField.text!
+        // first i am going to add stuff to firebase, before checking if it already exists and the updating the info
+        
+        
+        
         navigationController!.popViewController(animated: true)
         
     }
     
     
     
-    
+    func createDetails(name: String){
+        let detailsRef = FIRDatabase.database().reference(withPath: "lists/\(list!.name)/\(task!.name)")
+        let task = Task(name: name)
+        let taskRef = tasksRef.child(name)
+        taskRef.setValue(task.toAnyObject())
+    }
     
     
     

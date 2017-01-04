@@ -33,7 +33,7 @@ class ListOfListsViewController: UIViewController, UITableViewDataSource, UITabl
     // MARK: Firebase: Create, Update, Delete
     
     func createListOfLists(name: String){
-        let listOfListsRef = FIRDatabase.database().reference(withPath: "listOfLists")
+        let listOfListsRef = FIRDatabase.database().reference(withPath: "lists")
         let listOfLists = ListOfTasks(name: name)
         let listOfListRef = listOfListsRef.child(name)
         listOfListRef.setValue(listOfLists.toAnyObject())
