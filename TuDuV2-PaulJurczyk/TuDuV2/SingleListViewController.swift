@@ -63,6 +63,7 @@ class SingleListViewController: UIViewController, UITableViewDelegate, UITableVi
     func updateListName(newName: String, list: ListOfTasks) {
         if list.name != newName {
             list.ref?.removeValue()
+            //list.ref?.updateChildValues(["name" : nil])
             createTask(name: newName)
         } else { print("something wrong here")}
     }
