@@ -8,7 +8,7 @@
 
 
 import Foundation
-
+import Firebase
 // MARK: Global Variables ----------------------
 
 var listOfListsArray = [ListOfTasks]()
@@ -22,10 +22,16 @@ var currentListName: String?
 class ListOfTasks {
     var name: String
     var listOfTasksArray = [Task]()
+    var ref: FIRDatabaseReference?
     init(name: String) {
         self.name = name
     }
-    // this changes it to an object for Firebase to use
+    init(snapshot: FIRDataSnapshot) {
+        name = snapshot.key
+        ref = snapshot.ref
+    }
+    
+    // this changes it to an object for Firebase to use and creats a child with key "name"
     func toAnyObject() -> Any {
         return [
             "name": name

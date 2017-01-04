@@ -27,8 +27,8 @@ class SingleListViewController: UIViewController, UITableViewDelegate, UITableVi
     // MARK: IBActions ---------------------------
     
     @IBAction func saveListDetails(_ sender: Any) {
+        updateListName(newName: currentListNameTextField.text!, list: list!)
         list?.name = currentListNameTextField.text!
-        
         navigationController!.popViewController(animated: true)
     }
     
@@ -60,6 +60,12 @@ class SingleListViewController: UIViewController, UITableViewDelegate, UITableVi
         taskRef.setValue(task.toAnyObject())
     }
     
+    func updateListName(newName: String, list: ListOfTasks) {
+        if list.name != newName {
+            list.ref?.removeValue()
+            createTask(name: newName)
+        } else { print("something wrong here")}
+    }
     
     // MARK: UITableViewDataSource methods -----------------------
     
