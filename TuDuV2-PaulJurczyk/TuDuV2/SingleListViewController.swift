@@ -27,6 +27,7 @@ class SingleListViewController: UIViewController, UITableViewDelegate, UITableVi
     // MARK: IBActions ---------------------------
     
     @IBAction func saveListDetails(_ sender: Any) {
+        currentListName = currentListNameTextField.text!
         updateListName(newName: currentListNameTextField.text!, list: list!)
         list?.name = currentListNameTextField.text!
         navigationController!.popViewController(animated: true)
