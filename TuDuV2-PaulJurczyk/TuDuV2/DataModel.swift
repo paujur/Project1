@@ -52,7 +52,7 @@ class ListOfTasks {
         let dict = snapshot.value as! [String : Any]
         name = snapshot.key
         ref = snapshot.ref
-        let tasks = dict[snapshot.key] as! [Any]
+        let tasks = dict[snapshot.key] as! [Any] // I need to fix this because I added just the tasks to Firebase, and not an array of tasks
         for task in tasks {
             let newTask = Task(snapshot: task as! FIRDataSnapshot)
             listOfTasksArray.append(newTask)
