@@ -27,8 +27,8 @@ class ListOfTasks {
         self.name = name
     }
     init(snapshot: FIRDataSnapshot) {
-//        let snapshotValue = snapshot.value as! [String : AnyObject]
-//        name = snapshotValue["name"] as! String
+        //let snapshotValue = snapshot.value as! [String : AnyObject]
+        //name = snapshotValue["name"] as! String
         name = snapshot.key
         ref = snapshot.ref
     }

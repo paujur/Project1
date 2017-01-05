@@ -60,11 +60,28 @@ class SingleListViewController: UIViewController, UITableViewDelegate, UITableVi
         taskRef.setValue(task.toAnyObject())
     }
     
+    func createTaskAfterUpdate(name: String, listName: String){
+        let tasksRef = FIRDatabase.database().reference(withPath: "lists/\(listName)")
+        let task = Task(name: name)
+        let taskRef = tasksRef.child(name)
+        taskRef.setValue(task.toAnyObject())
+    }
+    
+    
+    func createListOfLists(name: String){
+        let listOfListsRef = FIRDatabase.database().reference(withPath: "lists")
+        let listOfLists = ListOfTasks(name: name)
+        let listOfListRef = listOfListsRef.child(name)
+        listOfListRef.setValue(listOfLists.toAnyObject())
+    }
     func updateListName(newName: String, list: ListOfTasks) {
         if list.name != newName {
-            list.ref?.removeValue()
-            //list.ref?.updateChildValues(["name" : nil])
-            createTask(name: newName)
+            let ref = FIRDatabase.database().reference(withPath: "lists/\(list.name)")
+            ref.removeValue()
+            createListOfLists(name: newName)
+            for task in list.listOfTasksArray {
+                createTaskAfterUpdate(name: task.name, listName: newName)
+            }
         } else { print("something wrong here")}
     }
     
