@@ -21,18 +21,20 @@ class DetailsViewController: UIViewController {
     
     // MARK: Local variable ---------------------------
     var task: Task?
-    
+    var detailsCreatedBefore = false
     // MARK: IBActions ---------------------------
   
 
     @IBAction func saveTaskDetails(_ sender: Any) {
+    
+        if detailsCreatedBefore == false && task?.name == taskDetailNameTextField.text! {
+        createDetails(details: taskDetailDetailsTextView.text, dueDate: taskDetailDueDateTextField.text!)
+        } else {
+            updateTask(newName: taskDetailNameTextField.text!, task: task!)
+        }
         task?.name = taskDetailNameTextField.text!
         task?.details = taskDetailDetailsTextView.text
         task?.dueDate = taskDetailDueDateTextField.text!
-        // first i am going to add stuff to firebase, before checking if it already exists and the updating the info
-        
-        createDetails(details: taskDetailDetailsTextView.text, dueDate: taskDetailDueDateTextField.text!)
-        
         navigationController!.popViewController(animated: true)
         
     }
@@ -40,6 +42,7 @@ class DetailsViewController: UIViewController {
     
     
     func createDetails(details: String, dueDate: String){
+        detailsCreatedBefore = true
         let detailsRef = FIRDatabase.database().reference(withPath: "lists/" + "\(currentListName!)" + "/" + "\(self.task!.name)")
         let detailRef = detailsRef.child("details")
         let dueDateRef = detailsRef.child("dueDate")
@@ -47,8 +50,30 @@ class DetailsViewController: UIViewController {
         dueDateRef.setValue(dueDate)
     }
     
+    func updateDetails(details: String, dueDate: String){
+        detailsCreatedBefore = true
+        let detailsRef = FIRDatabase.database().reference(withPath: "lists/" + "\(currentListName!)" + "/" + "\(taskDetailNameTextField.text!)")
+        let detailRef = detailsRef.child("details")
+        let dueDateRef = detailsRef.child("dueDate")
+        detailRef.setValue(details)
+        dueDateRef.setValue(dueDate)
+    }
     
+    func updateTask(newName: String, task: Task) {
+        if task.name != newName {
+            let ref = FIRDatabase.database().reference(withPath: "lists/" + "\(currentListName!)" + "/" + "\(self.task!.name)")
+            ref.removeValue()
+            createTask(name: newName)
+            updateDetails(details: taskDetailDetailsTextView.text, dueDate: taskDetailDueDateTextField.text!)
+        } else { print("something wrong here")}
+    }
     
+    func createTask(name: String){
+        let tasksRef = FIRDatabase.database().reference(withPath: "lists/\(currentListName!)")
+        let task = Task(name: name)
+        let taskRef = tasksRef.child(name)
+        taskRef.setValue(task.toAnyObject())
+    }
     
 
     override func viewDidLoad() {
