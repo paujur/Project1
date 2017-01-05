@@ -39,8 +39,6 @@ class DetailsViewController: UIViewController {
         
     }
     
-    
-    
     func createDetails(details: String, dueDate: String){
         detailsCreatedBefore = true
         let detailsRef = FIRDatabase.database().reference(withPath: "lists/" + "\(currentListName!)" + "/" + "\(self.task!.name)")
