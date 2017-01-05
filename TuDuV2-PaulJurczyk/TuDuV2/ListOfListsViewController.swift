@@ -39,6 +39,11 @@ class ListOfListsViewController: UIViewController, UITableViewDataSource, UITabl
         listOfListRef.setValue(listOfLists.toAnyObject())
     }
     
+    func deleteListOfLists(name: String){
+        let listOfListsRef = FIRDatabase.database().reference(withPath: "lists")
+        let listOfListRef = listOfListsRef.child(name)
+        listOfListRef.removeValue()
+    }
    
     // MARK: UITableViewDataSource methods -----------------------
     
@@ -49,6 +54,7 @@ class ListOfListsViewController: UIViewController, UITableViewDataSource, UITabl
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)  {
         if editingStyle == .delete {
+            deleteListOfLists(name: listOfListsArray[indexPath.row].name)
             listOfListsArray.remove(at: indexPath.row)
             listOfListsTableView.reloadData()
         }

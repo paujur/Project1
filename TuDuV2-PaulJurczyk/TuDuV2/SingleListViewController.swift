@@ -33,10 +33,6 @@ class SingleListViewController: UIViewController, UITableViewDelegate, UITableVi
         navigationController!.popViewController(animated: true)
     }
     
-    
-
-    
-    
     @IBAction func addNewTaskButtonTapped(_ sender: UIButton) {
         currentListName = currentListNameTextField.text!
         
@@ -98,6 +94,12 @@ class SingleListViewController: UIViewController, UITableViewDelegate, UITableVi
         } else { print("something wrong here")}
     }
     
+    func deleteTask(name: String){
+        let tasksRef = FIRDatabase.database().reference(withPath: "lists/\(list!.name)")
+        let taskRef = tasksRef.child(name)
+        taskRef.removeValue()
+    }
+    
     // MARK: UITableViewDataSource methods -----------------------
     
     
@@ -109,6 +111,7 @@ class SingleListViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)  {
         if editingStyle == .delete {
+            deleteTask(name: list!.listOfTasksArray[indexPath.row].name)
             list?.listOfTasksArray.remove(at: indexPath.row)
             listOfTasksTableView.reloadData()
         }
