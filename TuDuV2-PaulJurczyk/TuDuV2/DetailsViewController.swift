@@ -61,7 +61,7 @@ class DetailsViewController: UIViewController {
     
     func updateTask(newName: String, task: Task) {
         if task.name != newName {
-            let ref = FIRDatabase.database().reference(withPath: "lists/" + "\(currentListName!)" + "/" + "\(self.task!.name)")
+            let ref = FIRDatabase.database().reference(withPath: "lists/" + "\(currentListName!)/tasks" + "/" + "\(self.task!.name)")
             ref.removeValue()
             createTask(name: newName)
             updateDetails(details: taskDetailDetailsTextView.text, dueDate: taskDetailDueDateTextField.text!)
@@ -69,7 +69,7 @@ class DetailsViewController: UIViewController {
     }
     
     func createTask(name: String){
-        let tasksRef = FIRDatabase.database().reference(withPath: "lists/\(currentListName!)")
+        let tasksRef = FIRDatabase.database().reference(withPath: "lists/\(currentListName!)/tasks")
         let task = Task(name: name)
         let taskRef = tasksRef.child(name)
         taskRef.setValue(task.toAnyObject())
