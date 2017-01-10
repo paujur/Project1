@@ -10,10 +10,17 @@ import UIKit
 import Firebase
 class ListOfListsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    
     // MARK: IBOutlets -------------------------------
     
     @IBOutlet weak var newListNameTextField: UITextField!
     @IBOutlet weak var listOfListsTableView: UITableView!
+    
+    
+    
+    func reload(){
+        listOfListsTableView.reloadData()
+    }
     
     // MARK: IBActions ---------------------------
     
@@ -91,12 +98,13 @@ class ListOfListsViewController: UIViewController, UITableViewDataSource, UITabl
         listOfListsTableView.reloadData()
     }
     
-    
-    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        listenForChanges()        // Transparent navigation bar
+        listenForChangesLists(callingViewController: self)
+        self.listOfListsTableView.reloadData()
+        // Transparent navigation bar
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true

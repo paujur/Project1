@@ -11,6 +11,10 @@ import Firebase
 
 class SingleListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    func reload(){
+        listOfTasksTableView.reloadData()
+    }
+    
     // MARK: IBOutlets --------------------------------
     
     @IBOutlet weak var listOfTasksTableView: UITableView!
@@ -158,7 +162,7 @@ class SingleListViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        listenForChanges()
+        listenForChangesTasks(callingViewController: self)
         // Transparent navigation bar
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()

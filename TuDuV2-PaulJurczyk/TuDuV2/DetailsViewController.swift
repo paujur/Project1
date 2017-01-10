@@ -11,6 +11,10 @@ import Firebase
 
 class DetailsViewController: UIViewController {
     
+    func reload(){
+      //  listOfListsArray
+    }
+    
     // MARK: IBOutlets -----------------------------------------
     
     @IBOutlet weak var taskDetailNameTextField: UITextField!
