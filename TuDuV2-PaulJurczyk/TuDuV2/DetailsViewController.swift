@@ -41,7 +41,7 @@ class DetailsViewController: UIViewController {
     
     func createDetails(details: String, dueDate: String){
         detailsCreatedBefore = true
-        let detailsRef = FIRDatabase.database().reference(withPath: "lists/" + "\(currentListName!)" + "/" + "\(self.task!.name)")
+        let detailsRef = FIRDatabase.database().reference(withPath: "lists/" + "\(currentListName!)/tasks" + "/" + "\(self.task!.name)")
         let detailRef = detailsRef.child("details")
         let dueDateRef = detailsRef.child("dueDate")
         detailRef.setValue(details)
@@ -50,7 +50,7 @@ class DetailsViewController: UIViewController {
     
     func updateDetails(details: String, dueDate: String){
         detailsCreatedBefore = true
-        let detailsRef = FIRDatabase.database().reference(withPath: "lists/" + "\(currentListName!)" + "/" + "\(taskDetailNameTextField.text!)")
+        let detailsRef = FIRDatabase.database().reference(withPath: "lists/" + "\(currentListName!)/tasks" + "/" + "\(taskDetailNameTextField.text!)")
         let detailRef = detailsRef.child("details")
         let dueDateRef = detailsRef.child("dueDate")
         detailRef.setValue(details)

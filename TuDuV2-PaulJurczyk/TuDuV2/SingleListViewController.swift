@@ -51,7 +51,7 @@ class SingleListViewController: UIViewController, UITableViewDelegate, UITableVi
     // MARK: Firebase: Create, Update, Delete
     
     func createTask(name: String){
-        let tasksRef = FIRDatabase.database().reference(withPath: "lists/\(list!.name)")
+        let tasksRef = FIRDatabase.database().reference(withPath: "lists/\(list!.name)/tasks")
         let task = Task(name: name)
         let taskRef = tasksRef.child(name)
         taskRef.setValue(task.toAnyObject())
@@ -158,6 +158,7 @@ class SingleListViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        listenForChanges()
         // Transparent navigation bar
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()

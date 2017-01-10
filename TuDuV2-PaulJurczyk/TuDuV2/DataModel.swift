@@ -19,14 +19,18 @@ var currentListName: String?
 
 // Going to create a global function that will synch firebase data to local data. Would be better to move into a class and create a singleton... but don't want to mess with the data model at this point.
 
+
+
 func listenForChanges(){
     let lists = FIRDatabase.database().reference(withPath: "lists")
+    
     lists.observe(.value, with: didUpdateNotes)
+
+    
 }
 
-func didUpdateNotes(snapshot: FIRDataSnapshot){
+func didUpdateNotes(snapshot: FIRDataSnapshot) {
     listOfListsArray.removeAll()
-    
     let dict = snapshot
     for list in dict.children {
         let newList = ListOfTasks(snapshot: list as! FIRDataSnapshot)
@@ -44,6 +48,7 @@ func didUpdateNotes(snapshot: FIRDataSnapshot){
 class ListOfTasks {
     var name: String
     var listOfTasksArray = [Task]()
+    //var fbTasks: String?
     var ref: FIRDatabaseReference?
     init(name: String) {
         self.name = name
@@ -52,17 +57,22 @@ class ListOfTasks {
         let dict = snapshot.value as! [String : Any]
         name = snapshot.key
         ref = snapshot.ref
-        let tasks = dict[snapshot.key] as! [Any] // I need to fix this because I added just the tasks to Firebase, and not an array of tasks
-        for task in tasks {
-            let newTask = Task(snapshot: task as! FIRDataSnapshot)
+        let tasks = dict["tasks"] as! [String : Any]
+        for (task, value) in tasks {
+            let newTask = Task(name: task)
+            let value = value as! [String : Any]
+            newTask.details = value["details"] as! String
+            newTask.dueDate = value["dueDate"] as! String
             listOfTasksArray.append(newTask)
+            
         }
     }
     
     // this changes it to an object for Firebase to use and creats a child with key "name"
     func toAnyObject() -> Any {
         return [
-            "name": name
+            "name": name,
+           // "tasks": fbTasks
         ]
     }
 }
