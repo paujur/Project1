@@ -11,9 +11,6 @@ import Firebase
 
 class DetailsViewController: UIViewController {
     
-    func reload(){
-      //  listOfListsArray
-    }
     
     // MARK: IBOutlets -----------------------------------------
     
@@ -50,6 +47,7 @@ class DetailsViewController: UIViewController {
         let dueDateRef = detailsRef.child("dueDate")
         detailRef.setValue(details)
         dueDateRef.setValue(dueDate)
+        
     }
     
     func updateDetails(details: String, dueDate: String){
@@ -85,6 +83,7 @@ class DetailsViewController: UIViewController {
             taskDetailDueDateTextField.text = task.dueDate
         }
         super.viewDidLoad()
+        
         // Transparent navigation bar
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()

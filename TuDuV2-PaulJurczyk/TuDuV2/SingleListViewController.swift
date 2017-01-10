@@ -108,7 +108,7 @@ class SingleListViewController: UIViewController, UITableViewDelegate, UITableVi
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        currentListName = currentListNameTextField.text!
         performSegue(withIdentifier: "EditTaskSegue", sender: self)
     }
     

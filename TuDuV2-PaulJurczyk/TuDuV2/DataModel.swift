@@ -57,27 +57,9 @@ func didUpdateTasks(snapshot: FIRDataSnapshot) {
         let newList = ListOfTasks(snapshot: list as! FIRDataSnapshot)
         listOfListsArray.append(newList)
     }
-    if let detailsVC = detailsVC {
-    detailsVC.reload()
-    }
-}
-
-// Firebase Details Synch
-
-func listenForChangesDetails(callingViewController: DetailsViewController){
-    detailsVC = callingViewController
-    let lists = FIRDatabase.database().reference(withPath: "lists")
-    lists.observe(.value, with: didUpdateDetails)
-}
-
-func didUpdateDetails(snapshot: FIRDataSnapshot) {
-    listOfListsArray.removeAll()
-    let dict = snapshot
-    for list in dict.children {
-        let newList = ListOfTasks(snapshot: list as! FIRDataSnapshot)
-        listOfListsArray.append(newList)
-    }
+    if let singleListVC = singleListVC {
     singleListVC.reload()
+    }
 }
 
 
