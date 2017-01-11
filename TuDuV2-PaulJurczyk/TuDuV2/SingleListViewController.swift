@@ -62,7 +62,7 @@ class SingleListViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func createTaskAfterUpdate(name: String, listName: String){
-        let tasksRef = FIRDatabase.database().reference(withPath: "lists/\(listName)")
+        let tasksRef = FIRDatabase.database().reference(withPath: "lists/\(listName)/tasks")
         let task = Task(name: name)
         let taskRef = tasksRef.child(name)
         taskRef.setValue(task.toAnyObject())
@@ -73,7 +73,7 @@ class SingleListViewController: UIViewController, UITableViewDelegate, UITableVi
     // need to add details if they were already created when renaming the list
     func addPreexistingDetails(details: String, dueDate: String, listName: String, list: ListOfTasks, task: String){
         
-            let taskRef = FIRDatabase.database().reference(withPath: "lists/\(listName)/\(task)")
+            let taskRef = FIRDatabase.database().reference(withPath: "lists/\(listName)/tasks/\(task)")
         let detailsRef = taskRef.child("details")
         let dueDateRef = taskRef.child("dueDate")
         detailsRef.setValue(details)
@@ -99,7 +99,7 @@ class SingleListViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func deleteTask(name: String){
-        let tasksRef = FIRDatabase.database().reference(withPath: "lists/\(list!.name)")
+        let tasksRef = FIRDatabase.database().reference(withPath: "lists/\(list!.name)/tasks")
         let taskRef = tasksRef.child(name)
         taskRef.removeValue()
     }
