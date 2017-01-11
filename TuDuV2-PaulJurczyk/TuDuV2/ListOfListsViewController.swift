@@ -8,8 +8,14 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
+
 class ListOfListsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    // MARK: Local variables -------------------------
+    
+    var user: User!
+    
     
     // MARK: IBOutlets -------------------------------
     
@@ -29,12 +35,12 @@ class ListOfListsViewController: UIViewController, UITableViewDataSource, UITabl
         if newListName != "" { // want to make sure not to add a list with no name
         let newList = ListOfTasks(name: newListName!)
         listOfListsArray.append(newList)
+            // add it to Firebase
+            createListOfLists(name: newListName!)
         }
         // clear the list name textfield
         listOfListsTableView.reloadData()
         newListNameTextField.text = ""
-        // add it to Firebase
-        createListOfLists(name: newListName!)
     }
     
     // MARK: Firebase: Create, Update, Delete
@@ -103,6 +109,12 @@ class ListOfListsViewController: UIViewController, UITableViewDataSource, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         listenForChangesLists(callingViewController: self)
+        // Firebase Auth
+        FIRAuth.auth()!.addStateDidChangeListener { (auth, user) in
+            guard let user = user else { return }
+            self.user = User(authData: user)
+        }
+        
         self.listOfListsTableView.reloadData()
         // Transparent navigation bar
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
@@ -117,4 +129,22 @@ class ListOfListsViewController: UIViewController, UITableViewDataSource, UITabl
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		040D49451E085FA6009B1748 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 040D49441E085FA6009B1748 /* GoogleService-Info.plist */; };
 		043F3C231DDD1A560046B952 /* backgroundjpg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 043F3C221DDD1A560046B952 /* backgroundjpg.jpg */; };
+		0451AE401E26D9720012E686 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451AE3F1E26D9720012E686 /* LoginViewController.swift */; };
 		046E79E51DDCDA9E0009D89F /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E79E41DDCDA9E0009D89F /* DetailsViewController.swift */; };
+		0480B3CE1E26E5550062FAA0 /* FirebaseAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0480B3CD1E26E5550062FAA0 /* FirebaseAuth.swift */; };
 		0483C5931DDCB08A00C1F6A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0483C5921DDCB08A00C1F6A9 /* AppDelegate.swift */; };
 		0483C5951DDCB08A00C1F6A9 /* ListOfListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0483C5941DDCB08A00C1F6A9 /* ListOfListsViewController.swift */; };
 		0483C5981DDCB08A00C1F6A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0483C5961DDCB08A00C1F6A9 /* Main.storyboard */; };
@@ -25,7 +27,10 @@
 /* Begin PBXFileReference section */
 		040D49441E085FA6009B1748 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		043F3C221DDD1A560046B952 /* backgroundjpg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = backgroundjpg.jpg; path = Images/backgroundjpg.jpg; sourceTree = SOURCE_ROOT; };
+		0451AE3E1E26D6ED0012E686 /* TuDuV2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TuDuV2.entitlements; sourceTree = "<group>"; };
+		0451AE3F1E26D9720012E686 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		046E79E41DDCDA9E0009D89F /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		0480B3CD1E26E5550062FAA0 /* FirebaseAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAuth.swift; sourceTree = "<group>"; };
 		0483C58F1DDCB08A00C1F6A9 /* TuDuV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuDuV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0483C5921DDCB08A00C1F6A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0483C5941DDCB08A00C1F6A9 /* ListOfListsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfListsViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +80,7 @@
 		0483C5911DDCB08A00C1F6A9 /* TuDuV2 */ = {
 			isa = PBXGroup;
 			children = (
+				0451AE3E1E26D6ED0012E686 /* TuDuV2.entitlements */,
 				0483C5A81DDCB0FD00C1F6A9 /* Classes */,
 				0483C5A71DDCB0E100C1F6A9 /* Logic */,
 				0483C5A61DDCB0C500C1F6A9 /* UI */,
@@ -99,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				0483C5A91DDCB12200C1F6A9 /* DataModel.swift */,
+				0480B3CD1E26E5550062FAA0 /* FirebaseAuth.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -144,6 +151,7 @@
 				0483C5941DDCB08A00C1F6A9 /* ListOfListsViewController.swift */,
 				0483C5AF1DDCBEA300C1F6A9 /* SingleListViewController.swift */,
 				046E79E41DDCDA9E0009D89F /* DetailsViewController.swift */,
+				0451AE3F1E26D9720012E686 /* LoginViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -200,7 +208,13 @@
 				TargetAttributes = {
 					0483C58E1DDCB08A00C1F6A9 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = DHALB9C4R4;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -290,10 +304,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0480B3CE1E26E5550062FAA0 /* FirebaseAuth.swift in Sources */,
 				0483C5AC1DDCB37700C1F6A9 /* ListOfListsTableViewCell.swift in Sources */,
 				0483C5B21DDCBFAF00C1F6A9 /* ListOfTasksTableViewCell.swift in Sources */,
 				0483C5951DDCB08A00C1F6A9 /* ListOfListsViewController.swift in Sources */,
 				0483C5B01DDCBEA300C1F6A9 /* SingleListViewController.swift in Sources */,
+				0451AE401E26D9720012E686 /* LoginViewController.swift in Sources */,
 				046E79E51DDCDA9E0009D89F /* DetailsViewController.swift in Sources */,
 				0483C5931DDCB08A00C1F6A9 /* AppDelegate.swift in Sources */,
 				0483C5AA1DDCB12200C1F6A9 /* DataModel.swift in Sources */,
@@ -418,6 +434,8 @@
 			baseConfigurationReference = 409D68C7F323FA49258C3DF7 /* Pods-TuDuV2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TuDuV2/TuDuV2.entitlements;
+				DEVELOPMENT_TEAM = DHALB9C4R4;
 				INFOPLIST_FILE = TuDuV2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "General-Assembly.TuDuV2";
@@ -431,6 +449,8 @@
 			baseConfigurationReference = E7BFA3B2D6CDB8BFE26110CB /* Pods-TuDuV2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TuDuV2/TuDuV2.entitlements;
+				DEVELOPMENT_TEAM = DHALB9C4R4;
 				INFOPLIST_FILE = TuDuV2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "General-Assembly.TuDuV2";

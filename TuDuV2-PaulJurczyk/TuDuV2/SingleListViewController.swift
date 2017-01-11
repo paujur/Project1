@@ -44,11 +44,11 @@ class SingleListViewController: UIViewController, UITableViewDelegate, UITableVi
         if newTaskName != "" { // make sure not to add a task with no name
             let newTask = Task(name: newTaskName!)
             list?.listOfTasksArray.append(newTask)
+            // add it to Firebase
+            createTask(name: newTaskName!)
         }
         listOfTasksTableView.reloadData()
         newTaskNameTextField.text = ""
-        // add it to Firebase
-        createTask(name: newTaskName!)
     }
     
     
