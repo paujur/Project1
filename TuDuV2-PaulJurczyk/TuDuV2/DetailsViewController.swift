@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class DetailsViewController: UIViewController {
     
@@ -20,26 +21,26 @@ class DetailsViewController: UIViewController {
     
     // MARK: Local variable ---------------------------
     var task: Task?
-    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     // MARK: IBActions ---------------------------
   
 
     @IBAction func saveTaskDetails(_ sender: Any) {
+        
         task?.name = taskDetailNameTextField.text!
         task?.details = taskDetailDetailsTextView.text
         task?.dueDate = taskDetailDueDateTextField.text!
+        do {
+            try context.save()
+        }
+        catch {
+            print(error)
+        }
+
         navigationController!.popViewController(animated: true)
         
     }
     
-    
-    
-    
-    
-    
-    
-    
-
     override func viewDidLoad() {
         if let task = task {
             taskDetailNameTextField.text = task.name

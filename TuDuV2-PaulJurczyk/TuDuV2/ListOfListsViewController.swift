@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import CoreData
 
 class ListOfListsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     // MARK: IBOutlets -------------------------------
     
     @IBOutlet weak var newListNameTextField: UITextField!
@@ -20,17 +21,37 @@ class ListOfListsViewController: UIViewController, UITableViewDataSource, UITabl
     @IBAction func addNewListButtonTapped(_ sender: UIButton) {
         let newListName = newListNameTextField.text
         if newListName != "" { // want to make sure not to add a list with no name
-        let newList = ListOfTasks(name: newListName!)
-        listOfListsArray.append(newList)
+            // create a new list and add it to CoreData
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            let newList = List(context: context)
+            newList.name = newListName!
+            do {
+                try context.save()
+            }
+            catch {
+                print(error)
+            }
+            listOfListsArray.append(newList)
         }
         // clear the list name textfield
         listOfListsTableView.reloadData()
         newListNameTextField.text = ""
     }
     
+    // MARK: Core Data Function
+    
+    func readCoreData() {
+        let fetch: NSFetchRequest<List> = List.fetchRequest()
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        do {
+            let lists = try context.fetch(fetch)
+            listOfListsArray = lists
+        } catch {
+            print(error)
+        }
+    }
     
     
-   
     // MARK: UITableViewDataSource methods -----------------------
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -40,18 +61,18 @@ class ListOfListsViewController: UIViewController, UITableViewDataSource, UITabl
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)  {
         if editingStyle == .delete {
-            listOfListsArray.remove(at: indexPath.row)
+            //listOfListsArray.remove(at: indexPath.row)
             listOfListsTableView.reloadData()
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listOfListsArray.count
+        return  listOfListsArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let listCell = tableView.dequeueReusableCell(withIdentifier: "ListCell") as! ListOfListsTableViewCell
-        listCell.listCellNameLabel.text = listOfListsArray[indexPath.row].name
+            listCell.listCellNameLabel.text = listOfListsArray[indexPath.row].name
         // set cell background to clear
         listCell.backgroundColor = UIColor.clear
         return listCell
@@ -81,17 +102,18 @@ class ListOfListsViewController: UIViewController, UITableViewDataSource, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        readCoreData()
         // Transparent navigation bar
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 

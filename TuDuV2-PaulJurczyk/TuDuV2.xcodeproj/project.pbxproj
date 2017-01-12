@@ -18,6 +18,8 @@
 		0483C5AC1DDCB37700C1F6A9 /* ListOfListsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0483C5AB1DDCB37700C1F6A9 /* ListOfListsTableViewCell.swift */; };
 		0483C5B01DDCBEA300C1F6A9 /* SingleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0483C5AF1DDCBEA300C1F6A9 /* SingleListViewController.swift */; };
 		0483C5B21DDCBFAF00C1F6A9 /* ListOfTasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0483C5B11DDCBFAF00C1F6A9 /* ListOfTasksTableViewCell.swift */; };
+		04C712A51E27E43200F28BDF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C712A41E27E43200F28BDF /* CoreData.framework */; };
+		04C712AA1E27E47300F28BDF /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04C712A81E27E47300F28BDF /* CoreDataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		0483C5AB1DDCB37700C1F6A9 /* ListOfListsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfListsTableViewCell.swift; sourceTree = "<group>"; };
 		0483C5AF1DDCBEA300C1F6A9 /* SingleListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleListViewController.swift; sourceTree = "<group>"; };
 		0483C5B11DDCBFAF00C1F6A9 /* ListOfTasksTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfTasksTableViewCell.swift; sourceTree = "<group>"; };
+		04C712A41E27E43200F28BDF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		04C712A91E27E47300F28BDF /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04C712A51E27E43200F28BDF /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +57,7 @@
 			children = (
 				0483C5911DDCB08A00C1F6A9 /* TuDuV2 */,
 				0483C5901DDCB08A00C1F6A9 /* Products */,
+				04C712A31E27E43200F28BDF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				0483C5A91DDCB12200C1F6A9 /* DataModel.swift */,
+				04C712A81E27E47300F28BDF /* CoreDataModel.xcdatamodeld */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -138,6 +145,14 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
+		04C712A31E27E43200F28BDF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04C712A41E27E43200F28BDF /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -170,6 +185,7 @@
 				TargetAttributes = {
 					0483C58E1DDCB08A00C1F6A9 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = DHALB9C4R4;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -217,6 +233,7 @@
 				0483C5B01DDCBEA300C1F6A9 /* SingleListViewController.swift in Sources */,
 				046E79E51DDCDA9E0009D89F /* DetailsViewController.swift in Sources */,
 				0483C5931DDCB08A00C1F6A9 /* AppDelegate.swift in Sources */,
+				04C712AA1E27E47300F28BDF /* CoreDataModel.xcdatamodeld in Sources */,
 				0483C5AA1DDCB12200C1F6A9 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,6 +355,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = DHALB9C4R4;
 				INFOPLIST_FILE = TuDuV2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "General-Assembly.TuDuV2";
@@ -350,6 +368,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = DHALB9C4R4;
 				INFOPLIST_FILE = TuDuV2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "General-Assembly.TuDuV2";
@@ -380,6 +399,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		04C712A81E27E47300F28BDF /* CoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				04C712A91E27E47300F28BDF /* CoreDataModel.xcdatamodel */,
+			);
+			currentVersion = 04C712A91E27E47300F28BDF /* CoreDataModel.xcdatamodel */;
+			path = CoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0483C5871DDCB08A00C1F6A9 /* Project object */;
 }

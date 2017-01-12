@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class SingleListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -21,12 +22,20 @@ class SingleListViewController: UIViewController, UITableViewDelegate, UITableVi
     
 
     // MARK: Local variable ---------------------------
-    var list: ListOfTasks?
-
+    var list: List?
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     // MARK: IBActions ---------------------------
     
     @IBAction func saveListDetails(_ sender: Any) {
         list?.name = currentListNameTextField.text!
+        do {
+            try context.save()
+        }
+        catch {
+            print(error)
+        }
+
         navigationController!.popViewController(animated: true)
     }
     
@@ -36,16 +45,40 @@ class SingleListViewController: UIViewController, UITableViewDelegate, UITableVi
     
     @IBAction func addNewTaskButtonTapped(_ sender: UIButton) {
         // below is to change the list name if user decides to change it
-        
-    
         let newTaskName = newTaskNameTextField.text
         if newTaskName != "" { // make sure not to add a task with no name
-            let newTask = Task(name: newTaskName!)
-            list?.listOfTasksArray.append(newTask)
+
+            let newTask = Task(context: context)
+            newTask.name = newTaskName
+            list?.addToTasks(newTask)
+            do {
+                try context.save()
+            }
+            catch {
+                print(error)
+            }
         }
         listOfTasksTableView.reloadData()
         newTaskNameTextField.text = ""
     }
+    
+    // MARK: Core Data Function
+//    
+//    func readCoreData() {
+//        let fetch: NSFetchRequest<Task> = Task.fetchRequest()
+//
+//        do {
+//            let tasks = try context.fetch(fetch)
+//    
+////            list?.tasks = tasks
+//        } catch {
+//            print(error)
+//        }
+//    }
+    
+    
+  
+    
     
     // MARK: UITableViewDataSource methods -----------------------
     
@@ -58,20 +91,20 @@ class SingleListViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)  {
         if editingStyle == .delete {
-            list?.listOfTasksArray.remove(at: indexPath.row)
+           // list?.listOfTasksArray.remove(at: indexPath.row)
             listOfTasksTableView.reloadData()
         }
     }
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let list = list else { return 0 }
-        return list.listOfTasksArray.count
+       guard let list = list else { return 0 }
+        return list.tasks!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let taskCell = tableView.dequeueReusableCell(withIdentifier: "TaskCell") as! ListOfTasksTableViewCell
-        taskCell.taskCellNameLabel.text = list?.listOfTasksArray[indexPath.row].name
+      taskCell.taskCellNameLabel.text = list?.tasksArray[indexPath.row].name
         // set cell background to clear
         taskCell.backgroundColor = UIColor.clear
         return taskCell
@@ -81,7 +114,7 @@ class SingleListViewController: UIViewController, UITableViewDelegate, UITableVi
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "EditTaskSegue") {
             let detailsViewController = segue.destination as! DetailsViewController
-            detailsViewController.task = list?.listOfTasksArray[(listOfTasksTableView.indexPathForSelectedRow?.row)!]
+            detailsViewController.task = list?.tasksArray[(listOfTasksTableView.indexPathForSelectedRow?.row)!]
         }
     }
     
