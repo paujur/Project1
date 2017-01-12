@@ -11,6 +11,8 @@ import CoreData
 
 class ListOfListsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     // MARK: IBOutlets -------------------------------
     
     @IBOutlet weak var newListNameTextField: UITextField!
@@ -22,7 +24,7 @@ class ListOfListsViewController: UIViewController, UITableViewDataSource, UITabl
         let newListName = newListNameTextField.text
         if newListName != "" { // want to make sure not to add a list with no name
             // create a new list and add it to CoreData
-            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+           
             let newList = List(context: context)
             newList.name = newListName!
             do {
@@ -52,6 +54,7 @@ class ListOfListsViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     
+    
     // MARK: UITableViewDataSource methods -----------------------
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -61,7 +64,17 @@ class ListOfListsViewController: UIViewController, UITableViewDataSource, UITabl
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)  {
         if editingStyle == .delete {
-            //listOfListsArray.remove(at: indexPath.row)
+            listOfListsArray.remove(at: indexPath.row)
+            let fetch: NSFetchRequest<List> = List.fetchRequest()
+            do {
+                var lists = try context.fetch(fetch)
+                context.delete(lists[indexPath.row])
+                try context.save()
+        
+            }
+            catch {
+                print(error)
+            }
             listOfListsTableView.reloadData()
         }
     }

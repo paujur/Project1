@@ -91,7 +91,21 @@ class SingleListViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)  {
         if editingStyle == .delete {
-           // list?.listOfTasksArray.remove(at: indexPath.row)
+            
+            let task = list?.tasksArray[indexPath.row]
+            list?.removeFromTasks(task!)
+            
+            let fetch: NSFetchRequest<Task> = Task.fetchRequest()
+            do {
+                var tasks = try context.fetch(fetch)
+                context.delete(tasks[indexPath.row])
+                try context.save()
+                
+            }
+            catch {
+                print(error)
+            }
+
             listOfTasksTableView.reloadData()
         }
     }
@@ -99,7 +113,7 @@ class SingleListViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        guard let list = list else { return 0 }
-        return list.tasks!.count
+        return list.tasks?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
