@@ -23,13 +23,23 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var errorLabel: UILabel!
+    
+    
     // MARK: IBActions ---------------------
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         userEmail = emailTextField.text
         userPassword = passwordTextField.text
-        FIRAuth.auth()!.signIn(withEmail: userEmail!, password: userPassword!)
+        
+        FIRAuth.auth()!.signIn(withEmail: userEmail!, password: userPassword!){ user, error in
+            if error != nil {
+                self.errorLabel.text = "Please Check Your Email & Password"
+            }
+        }
+        
     }
+    
     
     @IBAction func signupButtonPressed(_ sender: UIButton) {
         userEmail = emailTextField.text
@@ -50,7 +60,9 @@ class LoginViewController: UIViewController {
     
     
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        self.errorLabel.text = ""
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
