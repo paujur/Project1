@@ -37,7 +37,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JsK-7L-Jvh" id="4ey-9R-SBf">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXn-0v-uPo">
@@ -152,6 +152,12 @@
                                 <constraint firstItem="AfZ-Xr-EsW" firstAttribute="centerX" secondItem="zhE-Ub-XLh" secondAttribute="centerX" id="eZE-y9-fMm"/>
                             </constraints>
                         </view>
+                        <barButtonItem key="rightBarButtonItem" image="Settings.png" id="uak-7R-vPe">
+                            <color key="tintColor" red="0.98431372549999996" green="0.1070889777" blue="0.2087414692" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="Lpf-by-7cl" kind="show" id="zJp-ij-CE2"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="listOfListsTableView" destination="rXh-5a-mCg" id="dEg-qd-zEE"/>
@@ -162,6 +168,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="101.59999999999999" y="136.28185907046478"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="f4d-F9-d0Y">
+            <objects>
+                <viewController id="Lpf-by-7cl" customClass="SettingsViewController" customModule="TuDuV2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Z2k-LJ-tLI"/>
+                        <viewControllerLayoutGuide type="bottom" id="cHv-Qd-AWC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YbJ-Bx-BMR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBT-mW-i9l">
+                                <rect key="frame" x="44" y="309" width="287" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.18467487590000001" green="0.18633814100000001" blue="0.1857084728" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" red="1" green="0.135874737" blue="0.2824510254" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="AqP-ja-hjg" eventType="touchUpInside" id="hcj-sQ-LLO"/>
+                                    <action selector="logoutPressed:" destination="Lpf-by-7cl" eventType="touchUpInside" id="SiJ-W0-Ayg"/>
+                                    <segue destination="pwA-Hu-T4a" kind="unwind" unwindAction="unwindAfterLogoutWithSegue:" id="T8B-ln-GDb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.08822115384615381" green="0.08822115384615381" blue="0.08822115384615381" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ep8-Bb-Sgy">
+                        <nil key="title"/>
+                        <view key="titleView" contentMode="scaleToFill" id="7fw-w2-AoB">
+                            <rect key="frame" x="113" y="6" width="150" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozV-WZ-Gf3">
+                                    <rect key="frame" x="42" y="4" width="66" height="24"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="17"/>
+                                    <color key="textColor" red="0.98431372549999996" green="0.1070889777" blue="0.2087414692" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </view>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qma-oJ-ZCi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="pwA-Hu-T4a" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="658" y="-603"/>
         </scene>
         <!--Single List View Controller-->
         <scene sceneID="hmw-Yl-QMr">
@@ -225,7 +282,7 @@
                                                         <rect key="frame" x="0.0" y="23" width="375" height="100"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9iW-ry-ntQ" id="KFD-Tg-Lfg">
-                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ulp-XY-kp0">
@@ -278,7 +335,7 @@
                                                 <rect key="frame" x="0.0" y="68.5" width="375" height="68"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YsV-5k-ZJr">
-                                                        <rect key="frame" x="0.0" y="0.5" width="375" height="68"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="68"/>
                                                         <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="30"/>
                                                         <state key="normal" title="ADD">
                                                             <color key="titleColor" red="1" green="0.13587473701023867" blue="0.28245102543876932" alpha="1" colorSpace="calibratedRGB"/>
@@ -338,6 +395,12 @@
                                 </label>
                             </subviews>
                         </view>
+                        <barButtonItem key="rightBarButtonItem" image="Settings.png" id="LCT-pl-xNF">
+                            <color key="tintColor" red="0.98431372549999996" green="0.1070889777" blue="0.2087414692" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="Lpf-by-7cl" kind="show" id="ZeT-u3-CwC"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="currentListNameTextField" destination="jSS-6v-LG0" id="Ppb-rj-dtW"/>
@@ -493,6 +556,12 @@
                                 </label>
                             </subviews>
                         </view>
+                        <barButtonItem key="rightBarButtonItem" image="Settings.png" id="d4F-JD-ajm">
+                            <color key="tintColor" red="0.98431372549999996" green="0.1070889777" blue="0.2087414692" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="Lpf-by-7cl" kind="show" id="VEm-eR-6kQ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="taskDetailDetailsTextView" destination="AUV-of-upq" id="G70-Ba-lrp"/>
@@ -592,6 +661,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Settings.png" width="25" height="25"/>
         <image name="backgroundjpg.jpg" width="2560" height="1600"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ZeT-u3-CwC"/>
+    </inferredMetricsTieBreakers>
 </document>

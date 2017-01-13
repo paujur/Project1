@@ -42,6 +42,15 @@ class LoginViewController: UIViewController {
         }
     }
     
+    // Unwind to Login Screen after logout
+    
+    
+    @IBAction func unwindAfterLogout(segue:UIStoryboardSegue) {
+    }
+    
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
