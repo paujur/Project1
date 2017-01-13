@@ -48,6 +48,8 @@ class LoginViewController: UIViewController {
         FIRAuth.auth()!.createUser(withEmail: userEmail!, password: userPassword!) { user, error in
             if error == nil {
                 FIRAuth.auth()?.signIn(withEmail: self.userEmail!, password: self.userPassword!)
+            } else {
+                self.errorLabel.text = "Email Is Already In Use"
             }
         }
     }

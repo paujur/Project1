@@ -186,7 +186,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.18467487590000001" green="0.18633814100000001" blue="0.1857084728" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <state key="normal" title="Log Out">
+                                <state key="normal" title="Sign Out">
                                     <color key="titleColor" red="1" green="0.135874737" blue="0.2824510254" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
